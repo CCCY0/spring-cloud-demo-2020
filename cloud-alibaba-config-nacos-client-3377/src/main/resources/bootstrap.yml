@@ -1,0 +1,19 @@
+server:
+  port: 3377
+spring:
+  application:
+    name: cloud-alibaba-config-client
+  profiles:
+    include: default # 加载bootstrap-default.yml配置
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${settings.dev.server-addr}:8848
+      config:
+        server-addr: ${settings.dev.server-addr}:8848
+        file-extension: yaml
+        group: DEV_GROUP
+        namespace: 0a997e4c-a7f7-4a66-b38a-18eecafe74ab
+
+# ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+# cloud-alibaba-config-client-dev.yaml

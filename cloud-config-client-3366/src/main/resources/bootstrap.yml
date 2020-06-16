@@ -1,0 +1,35 @@
+server:
+  port: 3366
+spring:
+  application:
+    name: cloud-config-client
+  profiles:
+    active: default
+  cloud:
+    config:
+      label: master
+      name: config # 配置文件名称
+      profile: dev # 配置文件后缀
+#      uri: lb://cloud-config-center
+      uri: http://127.0.0.1:3344
+  rabbitmq:
+    host: ${settings.dev.server-addr}
+    port: 5672
+    username: guest
+    password: guest
+
+# 为了刷新配置能动态更新
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  instance:
+    instance-id: cloud-config-client3366
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka

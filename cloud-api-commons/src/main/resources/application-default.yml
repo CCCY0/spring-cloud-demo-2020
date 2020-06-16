@@ -1,0 +1,4 @@
+# 若是不需要bootstrap.yml来加载启动配置, 则只需要这个配置文件
+settings:
+  dev:
+    server-addr: 192.168.91.128

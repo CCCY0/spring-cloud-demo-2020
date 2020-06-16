@@ -1,0 +1,22 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: cloud-payment-service
+  profiles:
+    active: default
+  cloud:
+    consul:
+      host: ${settings.dev.server-addr}
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name} # 这儿如果多实例部署会名称冲突, 可以重写ConsulServiceRegistry的register方法
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.cccy.springcloud.entity

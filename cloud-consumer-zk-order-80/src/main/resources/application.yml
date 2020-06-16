@@ -1,0 +1,10 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-order-service
+  profiles:
+    active: default
+  cloud:
+    zookeeper:
+      connect-string: ${settings.dev.server-addr}:2181

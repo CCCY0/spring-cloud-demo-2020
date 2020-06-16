@@ -1,0 +1,4 @@
+# 为了bootstrap.yml统一获取nacos地址
+settings:
+  dev:
+    server-addr: 192.168.91.128

@@ -1,0 +1,36 @@
+server:
+  port: 8803
+spring:
+  application:
+    name: cloud-stream-provider
+  profiles:
+    active: default
+  cloud:
+    stream:
+      binders: # 配置要绑定的rabbitMQ服务信息
+        defaultRabbit: # 自定义名称
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: ${settings.dev.server-addr}
+                port: 5672
+                username: guest
+                password: guest
+      bindings: # 服务的整合处理
+        input: # 通道名称
+          destination: studyExchange # exchange名称定义
+          content-type: application/json
+          default-binder: defaultRabbit
+          group: cccyA # 相同的组可以避免重复消费
+
+
+eureka:
+  instance:
+    instance-id: cloud-stream-provider8803
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka

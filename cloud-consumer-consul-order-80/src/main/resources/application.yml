@@ -1,0 +1,13 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-order-service
+  profiles:
+    active: default
+  cloud:
+    consul:
+      host: ${settings.dev.server-addr}
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name} # 这儿如果多实例部署会名称冲突, 可以重写ConsulServiceRegistry的register方法

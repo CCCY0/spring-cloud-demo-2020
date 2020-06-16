@@ -1,0 +1,13 @@
+server:
+  port: 83
+spring:
+  application:
+    name: cloud-nacos-order-service
+  profiles:
+    active: default
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${settings.dev.server-addr}:8848
+service-url:
+  nacos-user-service: http://cloud-alibaba-payment-service

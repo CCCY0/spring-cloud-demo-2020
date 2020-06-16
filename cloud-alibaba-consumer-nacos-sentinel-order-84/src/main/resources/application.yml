@@ -1,0 +1,41 @@
+server:
+  port: 84
+spring:
+  application:
+    name: cloud-nacos-order-consumer
+  profiles:
+    active: default
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${settings.dev.server-addr}:8848
+    sentinel:
+      transport:
+        dashboard: ${settings.dev.server-addr}:8858
+        port: 8719 # 客户端的端口 如果被占用则+1
+      # 持久化进nacos的配置
+      # 配置事例(需要配置进nacos的配置中心):
+      #[
+          #    {
+          #        "resource": "fallback",
+          #        "limitApp": "default",
+          #        "grade": 1,
+          #        "count": 1,
+          #        "strategy": 0,
+          #        "controlBehavior": 0,
+          #        "clusterMode": false
+        #    }
+        #]
+      datasource:
+        ds1:
+          nacos:
+            server-addr: ${settings.dev.server-addr}:8848
+            dataId: ${spring.application.name}
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+feign:
+  sentinel:
+    enabled: true
+service-url:
+  nacos-user-service: http://cloud-alibaba-payment-sentinel-provider

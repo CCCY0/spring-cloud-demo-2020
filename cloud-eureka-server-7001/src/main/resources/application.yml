@@ -1,0 +1,13 @@
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: eureka-server-7001 #eureka 服务端实例名称
+  client:
+    register-with-eureka: false # 不注册自己
+    fetch-registry: false # 不需要检索服务
+    service-url:
+      # 与eureka server交互的地址, 查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://localhost:7002/eureka/
+  server:
+    # enable-self-preservation: false 关闭自我保护

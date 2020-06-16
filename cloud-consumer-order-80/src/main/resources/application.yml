@@ -1,0 +1,16 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-order-service
+  zipkin:
+    base-url: http://localhost:7777/
+  sleuth:
+    sampler:
+      probability: 1 #采样率, 1表示全部采集
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka,http://localhost:7002/eureka
