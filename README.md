@@ -63,9 +63,10 @@ cloud-alibaba-seata-account-service-2003: 账户服务
 
 # docker创建命令
 docker run -d -p 2181:2181 --name zookeeper zookeeper  
-docker run -d -p 8500:8500 --name consul consul
-docker run -d -p 8848:8848 --name=nacos --env MODE=standalone nacos/nacos-server
-docker run -d -p 5671:5671 -p 5672:5672 -p 15672:15672 --name rabbitmq rabbitmq
-docker run -d -p 8858:8858 --name sentinel bladex/sentinel-dashboard
-docker run --network host --name seata-server -d -p 8091:8091 -e SEATA_IP=192.168.91.128 -e SEATA_CONFIG_NAME=file:/root/seata-config/registry -v /root/docker/seata:/root/seata-config seataio/seata-server
+docker run -d -p 8500:8500 --name consul consul  
+docker run -d -p 8848:8848 --name=nacos --env MODE=standalone nacos/nacos-server  
+docker run -d -p 5671:5671 -p 5672:5672 -p 15672:15672 --name rabbitmq rabbitmq  
+docker run -d -p 8858:8858 --name sentinel bladex/sentinel-dashboard  
+(PS: 因seata获取的IP地址为内网IP, 所以需要使用SEATA_IP环境变量手动配置一下注册到nacos的IP地址)  
+docker run --network host --name seata-server -d -p 8091:8091 -e SEATA_IP=192.168.91.128 -e SEATA_CONFIG_NAME=file:/root/seata-config/registry -v /root/docker/seata:/root/seata-config seataio/seata-server  
 
