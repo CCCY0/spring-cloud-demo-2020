@@ -1,0 +1,1064 @@
+{
+	"info": {
+		"_postman_id": "22f8f0a8-7c19-4519-bd7e-50ae2dbd5b5c",
+		"name": "DEMO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sso",
+			"item": [
+				{
+					"name": "http://localhost:9100/oauth/token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "111",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "25d55ad283aa400af464c76d713c07ad",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "pcEkv2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://www.baidu.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "scope",
+									"value": "read",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "client_id",
+									"value": "fish",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "fish",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9100/oauth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9100",
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9100/oauth/check_token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicmVzMSJdLCJ1c2VyX25hbWUiOiIxMTEiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiLCJ0cnVzdCJdLCJpZCI6MzgsImV4cCI6MTU4OTc3OTg4MCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9lZGl0X3JvbGUiLCJST0xFX2RlbF9jb21tZW50IiwiUk9MRV9jcmVhdGVfcm9sZSIsIlJPTEVfY3JlYXRlX3VzZXJzIiwiUk9MRV92aWV3X3Blcm1pc3Npb24iLCJST0xFX2VkaXRfcG9zdCIsIlJPTEVfZGVsZXRlX3VzZXJzIiwiUk9MRV9hZGRfcG9zdCIsIlJPTEVfdmlld191c2Vyc19ieV9yb2xlIiwiUk9MRV9hZGRfY29tbWVudCIsIlJPTEVfZGVsX3JvbGUiLCJST0xFX2Fzc2lnbl9wZXJtaXNzaW9uc190b19yb2xlIiwiUk9MRV9hc3NpZ25fdXNlcnNfdG9fcm9sZSIsIlJPTEVfZGVsX3Bvc3QiLCJST0xFX2VkaXRfdXNlcnMiLCJST0xFX3ZpZXdfcGVybWlzc2lvbnNfYnlfcm9sZSIsIlJPTEVfdmlld191c2VycyIsIlJPTEVfdmlld19yb2xlIl0sImp0aSI6IjI1Mjg5ZTExLWIxZDItNDlhYi1iOGU0LTQwZDJmYmExZGYyMyIsImVtYWlsIjoiMTExIiwiY2xpZW50X2lkIjoiZmlzaCJ9.ikFOZlB9dTDhqNDchoxTg7XBUr9dUVCiu-OFTp1QmnKk2JtWxVd-5e1E40uvZC6_3ktJE1blEjYpqaLBMS29JpIlaNIVE3nd3oeUxTEok5lhb7W5zuquFhexCRVcL9M8_6609X-BP4AMpc-6H3O7uDogqbPOhXTcOh2yNwRe7FNzuEjfckYVcf4Ccrq7rC4OLSuqSkbtR9YIlwKKTAbZZzvy1xOmczdvQrgtGFh2yFIsxU-h7G-ViNS7Dl0fPZAVKQUaAKVjJn4Hg6IPGRLY9X7Yhl7sN2pIj080uFccc0yqBWRCTosH-f5iekCaT5D703IaBrY10sd46ygenQEUjQ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9100/oauth/check_token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9100",
+							"path": [
+								"oauth",
+								"check_token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9200/users/roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicmVzMSJdLCJ1c2VyX25hbWUiOiIxMTEiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiLCJ0cnVzdCJdLCJpZCI6MzgsImV4cCI6MTU4OTczNDI2OCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9lZGl0X3JvbGUiLCJST0xFX2RlbF9jb21tZW50IiwiUk9MRV9jcmVhdGVfcm9sZSIsIlJPTEVfY3JlYXRlX3VzZXJzIiwiUk9MRV92aWV3X3Blcm1pc3Npb24iLCJST0xFX2VkaXRfcG9zdCIsIlJPTEVfZGVsZXRlX3VzZXJzIiwiUk9MRV9hZGRfcG9zdCIsIlJPTEVfdmlld191c2Vyc19ieV9yb2xlIiwiUk9MRV9hZGRfY29tbWVudCIsIlJPTEVfZGVsX3JvbGUiLCJST0xFX2Fzc2lnbl9wZXJtaXNzaW9uc190b19yb2xlIiwiUk9MRV9hc3NpZ25fdXNlcnNfdG9fcm9sZSIsIlJPTEVfZGVsX3Bvc3QiLCJST0xFX2VkaXRfdXNlcnMiLCJST0xFX3ZpZXdfcGVybWlzc2lvbnNfYnlfcm9sZSIsIlJPTEVfdmlld191c2VycyIsIlJPTEVfdmlld19yb2xlIl0sImp0aSI6IjNiMDE0ZGVkLTQ4NmMtNDlmNS1iNDJiLTkyYjU3M2NiMTUzYiIsImVtYWlsIjoiMTExIiwiY2xpZW50X2lkIjoiZmlzaCJ9.p1kdGjBcHfdc_MFB8dL7vVPOruQdncKZLr2pA34SgoAbvRd1hz3lNCYWp1JssPUTLBxvin0CHXDeH5VB2fNY7j74DIgMgerDWY6BLvD5UCXrODRgSL2r2JXkcAnZzJpymheeeT_4AIxvIKxAdDBjC1vdlapKh8jDKlNmP5RGXmar4pHL0kKVMPdn0zoulW-62Ha-Dyr05aRGQVmVPhoD-ZzG5wNpqNzIa1YZM5hwrgtIo1NFGqxnLWPDYPOeTseyuELQw_mU8JeLHAttNS_x5EMzLXVrPPjJnaKCi1MwmRDKVmAIS29mXIQkor8yHHjsIYOdCWAdxE5N5jk_GCNKGQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9200/users/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"users",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "springcloud-demo",
+			"item": [
+				{
+					"name": "payment-8001",
+					"item": [
+						{
+							"name": "获取数据",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8001/payments/31",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"payments",
+										"31"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "新建数据",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"serial\": \"测试01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8001/payments",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"payments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取服务发现数据",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8001/discovery",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"discovery"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "consumer-payment-80",
+					"item": [
+						{
+							"name": "获取数据",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1/consumer/payments/31",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"path": [
+										"consumer",
+										"payments",
+										"31"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "新建数据",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"serial\": \"测试01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1/consumer/payments",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"path": [
+										"consumer",
+										"payments"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "gateway-9527",
+					"item": [
+						{
+							"name": "获取数据",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:9527/payments/31?username=1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "9527",
+									"path": [
+										"payments",
+										"31"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取discovery-client",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"serial\": \"测试01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:9527/discovery",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "9527",
+									"path": [
+										"discovery"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "config-center-3344",
+					"item": [
+						{
+							"name": "配置中心获取配置",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:3344/master/config-dev.yml",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3344",
+									"path": [
+										"master",
+										"config-dev.yml"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取配置从客户端3355",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:3355/config",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3355",
+									"path": [
+										"config"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取配置从客户端3366",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:3366/config",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3366",
+									"path": [
+										"config"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "让客户端3355刷新配置",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:3355/actuator/refresh",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3355",
+									"path": [
+										"actuator",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "让服务端3344广播配置",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:3344/actuator/bus-refresh",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3344",
+									"path": [
+										"actuator",
+										"bus-refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "服务端只通知3355",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:3344/actuator/bus-refresh/cloud-config-client:3355",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3344",
+									"path": [
+										"actuator",
+										"bus-refresh",
+										"cloud-config-client:3355"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "stream",
+					"item": [
+						{
+							"name": "生产消息",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8801/messages",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8801",
+									"path": [
+										"messages"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "payment-8008",
+					"item": [
+						{
+							"name": "获取数据",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8008/payments/31",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8008",
+									"path": [
+										"payments",
+										"31"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "新建数据",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"serial\": \"测试01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8008/payments",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8008",
+									"path": [
+										"payments"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "consumer-payment-83",
+					"item": [
+						{
+							"name": "获取数据",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:83/consumer/payments/31",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "83",
+									"path": [
+										"consumer",
+										"payments",
+										"31"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "新建数据",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"serial\": \"测试01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:83/consumer/payments",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "83",
+									"path": [
+										"consumer",
+										"payments"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "config-client-3377",
+					"item": [
+						{
+							"name": "获取配置从客户端3377",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:3377/config",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3377",
+									"path": [
+										"config"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取配置从客户端3366",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:3366/config",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3366",
+									"path": [
+										"config"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "让客户端3355刷新配置",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:3355/actuator/refresh",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3355",
+									"path": [
+										"actuator",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "让服务端3344广播配置",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:3344/actuator/bus-refresh",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3344",
+									"path": [
+										"actuator",
+										"bus-refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "服务端只通知3355",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:3344/actuator/bus-refresh/cloud-config-client:3355",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3344",
+									"path": [
+										"actuator",
+										"bus-refresh",
+										"cloud-config-client:3355"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "payment-8401",
+					"item": [
+						{
+							"name": "获取数据",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8401/payments/31",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8401",
+									"path": [
+										"payments",
+										"31"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取数据总是异常",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8401/payments/31/error",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8401",
+									"path": [
+										"payments",
+										"31",
+										"error"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "新建数据",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"serial\": \"测试01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8401/payments",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8401",
+									"path": [
+										"payments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "热点规则",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8401/payments/hotkeys?p1=1&p2=2",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8401",
+									"path": [
+										"payments",
+										"hotkeys"
+									],
+									"query": [
+										{
+											"key": "p1",
+											"value": "1"
+										},
+										{
+											"key": "p2",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "自定义handler类",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8401/payments/customClass",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8401",
+									"path": [
+										"payments",
+										"customClass"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "payment-84/8010/8011",
+					"item": [
+						{
+							"name": "获取数据84",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:84/consumer/payments/31",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "84",
+									"path": [
+										"consumer",
+										"payments",
+										"31"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取数据8010",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8010/payments/31",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8010",
+									"path": [
+										"payments",
+										"31"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取数据8011",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8011/payments/31",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8011",
+									"path": [
+										"payments",
+										"31"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "新建数据",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"serial\": \"测试01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8008/payments",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8008",
+									"path": [
+										"payments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取数据84(feign)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:84/consumer/payments/1/feign",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "84",
+									"path": [
+										"consumer",
+										"payments",
+										"1",
+										"feign"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "seata-2001/2002/2003",
+					"item": [
+						{
+							"name": "下单",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"userId\": 1,\n\t\"productId\": \"1\",\n\t\"count\": 2,\n\t\"money\": 9.98\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:2001/order/create",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "2001",
+									"path": [
+										"order",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
