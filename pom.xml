@@ -49,7 +49,7 @@
     <common.version>1.0-SNAPSHOT</common.version>
   </properties>
 
-  <!-- 子模块继承之后，提供作用：锁定版本+子modlue不用写groupId和version  -->
+  <!-- 子模块继承之后，提供作用：锁定版本+子module不用写groupId和version  -->
   <dependencyManagement>
     <dependencies>
       <dependency>
