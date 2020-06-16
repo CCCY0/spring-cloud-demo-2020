@@ -1,4 +1,5 @@
 # 总体结构
+![](https://visitor-badge.glitch.me/badge?page_id=cccy0)
 
 ## 通用的模块
 cloud-api-commons: 通用的模块   
